@@ -1,0 +1,16 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: chat-frontend-ingress
+  namespace: chat # Make sure this matches your namespace
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`chat.succeedex.in`) # || Host(`api.succeedex.in`)
+      kind: Rule
+      services:
+        - name: chat-frontend-service
+          port: 80
+  tls:
+    secretName: chat-frontend-cert-secret

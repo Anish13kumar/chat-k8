@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-backend-service
+  namespace: chat-backend  # Make sure this matches your namespace
+  labels:
+    app: chat-backend
+spec:
+  type: ClusterIP  # Service type
+  selector:
+    app: chat-backend
+  ports:
+    - protocol: TCP
+      port: 3000        # Service port
+      targetPort: 3000  # Container port
+

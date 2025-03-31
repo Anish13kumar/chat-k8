@@ -1,0 +1,6 @@
+mongodb://mongouser:secret123@mongo-service.mongo.svc.cluster.local:27017
+chat-backend-service.chat-backend.svc.cluster.local:3000
+
+
+
+                                        
