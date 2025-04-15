@@ -16,7 +16,7 @@ spec:
         - name: websocket-headers
         - name: cors-headers
   tls:
-    certResolver: myresolver
+    secretName: chat-frontend-ws-cert-secret
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
@@ -55,4 +55,3 @@ spec:
       - "Authorization"
     accessControlAllowCredentials: true
     accessControlMaxAge: 100
-    

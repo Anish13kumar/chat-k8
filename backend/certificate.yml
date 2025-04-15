@@ -1,14 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: chat-frontend-cert
-  namespace: chat
+  name: chat-frontend-ws-cert
+  namespace: chat-backend
 spec:
-  secretName: chat-frontend-cert-secret
+  secretName: chat-frontend-ws-cert-secret
   issuerRef:
     name: cloudflare-cluster-issuer # Corrected name
     kind: ClusterIssuer
-  commonName: chat.succeedex.in
+  commonName: api.succeedex.in
   dnsNames:
-    - chat.succeedex.in
+    # - chat.succeedex.in
     - api.succeedex.in
